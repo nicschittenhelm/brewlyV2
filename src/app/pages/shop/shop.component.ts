@@ -90,15 +90,6 @@ export class ShopComponent {
       "specialty": "Gold"
   },
   {
-      "imagePath": "assets/unidesign2.webp",
-      "title": "Premium Röstung",
-      "weight": 500,
-      "description": "Ein eleganter Kaffee mit reichhaltigen Noten von Karamell und Vanille für den besonderen Genuss.",
-      "price": 45.99,
-      "roastLevel": "dunkel",
-      "specialty": "Premium"
-  },
-  {
       "imagePath": "assets/unidesign3.webp",
       "title": "Bronze Röstung",
       "weight": 500,
@@ -115,24 +106,6 @@ export class ShopComponent {
       "price": 52.99,
       "roastLevel": "dunkel",
       "specialty": "Meisterstück"
-  },
-  {
-    "imagePath": "assets/unidesign5.webp",
-    "title": "Deluxe Röstung",
-    "weight": 500,
-    "description": "Ein luxuriöser Kaffee mit Aromen von Haselnüssen und edlen Schokoladennoten.",
-    "price": 55.99,
-    "roastLevel": "dunkel",
-    "specialty": "Deluxe"
-  },
-  {
-    "imagePath": "assets/unidesign6.webp",
-    "title": "Exklusiv Röstung",
-    "weight": 500,
-    "description": "Ein exklusiver Kaffee mit einzigartigen Nuancen von Trockenfrüchten und einer feinen Süße.",
-    "price": 59.99,
-    "roastLevel": "dunkel",
-    "specialty": ""
   },
   {
     "imagePath": "assets/unidesign1.webp",
@@ -234,15 +207,6 @@ export class ShopComponent {
     "specialty": "Deluxe"
   },
   {
-    "imagePath": "assets/unidesign6.webp",
-    "title": "Exklusiv Röstung",
-    "weight": 500,
-    "description": "Ein exklusiver Kaffee mit einer komplexen Mischung aus Trockenfrüchten und einer feinen Süße.",
-    "price": 57.99,
-    "roastLevel": "dunkel",
-    "specialty": ""
-  },
-  {
     "imagePath": "assets/unidesign1.webp",
     "title": "Gold Premium",
     "weight": 500,
@@ -261,15 +225,6 @@ export class ShopComponent {
     "specialty": "Premium"
   },
   {
-    "imagePath": "assets/unidesign3.webp",
-    "title": "Bronze Blend",
-    "weight": 500,
-    "description": "Ein kräftiger Kaffee mit Aromen von Kakaopulver und gerösteten Kaffeebohnennoten.",
-    "price": 40.99,
-    "roastLevel": "dunkel",
-    "specialty": "Bronze"
-  },
-  {
     "imagePath": "assets/unidesign4.webp",
     "title": "Röstung Gold",
     "weight": 500,
@@ -279,15 +234,6 @@ export class ShopComponent {
     "specialty": "Gold"
   },
   {
-    "imagePath": "assets/unidesign5.webp",
-    "title": "Deluxe Röstung",
-    "weight": 500,
-    "description": "Ein erstklassiger Kaffee mit Aromen von Haselnüssen und hochwertiger Zartbitterschokolade.",
-    "price": 55.49,
-    "roastLevel": "dunkel",
-    "specialty": "Deluxe"
-  },
-  {
     "imagePath": "assets/unidesign6.webp",
     "title": "Exklusiv Kaffee",
     "weight": 500,
@@ -295,33 +241,6 @@ export class ShopComponent {
     "price": 59.49,
     "roastLevel": "dunkel",
     "specialty": ""
-  },
-  {
-    "imagePath": "assets/unidesign3.webp",
-    "title": "Bronze Genuss",
-    "weight": 500,
-    "description": "Ein kräftiger Kaffee mit tiefen Noten von Kakao und gerösteten Mandeln.",
-    "price": 42.99,
-    "roastLevel": "dunkel",
-    "specialty": "Bronze"
-  },
-  {
-    "imagePath": "assets/unidesign4.webp",
-    "title": "Kaffee Luxus",
-    "weight": 500,
-    "description": "Ein luxuriöser Kaffee mit reichhaltigen Aromen von Zartbitterschokolade und feinen Gewürzen.",
-    "price": 50.99,
-    "roastLevel": "dunkel",
-    "specialty": ""
-  },
-  {
-    "imagePath": "assets/unidesign5.webp",
-    "title": "Deluxe Blend",
-    "weight": 500,
-    "description": "Ein exklusiver Blend mit Aromen von Haselnüssen und edlen Schokoladennoten.",
-    "price": 53.99,
-    "roastLevel": "dunkel",
-    "specialty": "Deluxe"
   },
   {
     "imagePath": "assets/unidesign6.webp",
@@ -333,24 +252,6 @@ export class ShopComponent {
     "specialty": ""
   },
   {
-    "imagePath": "assets/unidesign1.webp",
-    "title": "Gold Premium",
-    "weight": 500,
-    "description": "Ein Premium Kaffee mit goldenen Aromen von gerösteten Nüssen und feiner Schokolade.",
-    "price": 49.49,
-    "roastLevel": "dunkel",
-    "specialty": "Gold"
-  },
-  {
-    "imagePath": "assets/unidesign2.webp",
-    "title": "Premium Röstung",
-    "weight": 500,
-    "description": "Ein eleganter Kaffee mit reichhaltigen Noten von Karamell und Vanille für besondere Momente.",
-    "price": 46.49,
-    "roastLevel": "mittel",
-    "specialty": "Premium"
-  },
-  {
     "imagePath": "assets/unidesign3.webp",
     "title": "Bronze Blend",
     "weight": 500,
@@ -360,15 +261,6 @@ export class ShopComponent {
     "specialty": "Bronze"
   },
   {
-    "imagePath": "assets/unidesign4.webp",
-    "title": "Röstung Gold",
-    "weight": 500,
-    "description": "Ein edler Kaffee mit goldenen Aromen von gerösteten Nüssen und feiner Vanille.",
-    "price": 52.49,
-    "roastLevel": "dunkel",
-    "specialty": "Gold"
-  },
-  {
     "imagePath": "assets/unidesign5.webp",
     "title": "Deluxe Röstung",
     "weight": 500,
@@ -376,15 +268,6 @@ export class ShopComponent {
     "price": 55.49,
     "roastLevel": "dunkel",
     "specialty": "Deluxe"
-  },
-  {
-    "imagePath": "assets/unidesign6.webp",
-    "title": "Exklusiv Kaffee",
-    "weight": 500,
-    "description": "Ein exklusiver Kaffee mit einzigartigen Aromen von Trockenfrüchten und edler Süße.",
-    "price": 59.49,
-    "roastLevel": "dunkel",
-    "specialty": ""
   },
   {
     "imagePath": "assets/select1.webp",

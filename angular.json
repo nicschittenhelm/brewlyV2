@@ -46,7 +46,6 @@
           },
           "configurations": {
             "production": {
-             "baseHref": "/brewlyV1/",
               "budgets": [
                 {
                   "type": "initial",
@@ -104,6 +103,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
