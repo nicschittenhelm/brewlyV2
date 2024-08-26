@@ -26,7 +26,6 @@
             "outputPath": "dist/brewlyV1",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "baseHref": "/brewlyV1/",
             "polyfills": [
               "zone.js"
             ],
@@ -47,6 +46,7 @@
           },
           "configurations": {
             "production": {
+             "baseHref": "/brewlyV1/",
               "budgets": [
                 {
                   "type": "initial",
