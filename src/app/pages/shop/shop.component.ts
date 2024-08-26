@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-shop',
@@ -456,26 +456,106 @@ export class ShopComponent {
   searchText: string = '';
   selectedRoastLevel: string = '';
   selectedSpecialty: string = '';
+  selectedWeight: number | null = null;
+  selectedSort: 'Aufsteigend' | 'Absteigend' | null = null;
+  isDropdownOpenSpecialty: boolean = false; 
+  isRoastLevelDropdownOpen: boolean = false;
+  isDropdownOpenWeight: boolean = false;
+  isDropdownOpenSort: boolean = false;
+
+  specialties: string[] = [
+    'Gold', 'Premium', 'Bronze', 'Meisterstück', 'Deluxe', 'Elegant', 'Röstmeister', 'Select'
+  ];
+  roastLevels: string[] = ['hell', 'mittel', 'dunkel'];
+  weights: number[] = [250, 300, 400, 500, 600, 750];
 
   filteredItems = [...this.itemCards];
+
+  toggleDropdownSpecialty() {
+    this.isDropdownOpenSpecialty = !this.isDropdownOpenSpecialty;
+  }
+
+  toggleRoastLevelDropdown() {
+    this.isRoastLevelDropdownOpen = !this.isRoastLevelDropdownOpen;
+  }
+
+  toggleDropdownWeight() {
+    this.isDropdownOpenWeight = !this.isDropdownOpenWeight;
+  }
+
+  toggleDropdownSort() {
+    this.isDropdownOpenSort = !this.isDropdownOpenSort;
+  }
+
+  resetFilters() {
+    this.searchText = '';
+    this.selectedWeight = null;
+    this.selectedSpecialty = '';
+    this.selectedSort = null; // Reset sorting
+    this.filteredItems = [...this.itemCards]; // Reset filtered items to include all items
+  }
+
+  selectSort(sort: 'Aufsteigend' | 'Absteigend' | null) {
+    this.selectedSort = sort;
+    this.isDropdownOpenSort = false;
+    this.filterItems(); // Filter items after changing sort option
+  }
+
+  selectSpecialty(specialty: string) {
+    if (specialty === '') {
+      this.selectedSpecialty = ''; // Reset specialty filter
+    } else {
+      this.selectedSpecialty = specialty;
+    }
+    this.isDropdownOpenSpecialty = false; // Close dropdown after selection
+    this.filterItems();  // Update the filtered items based on selection
+  }
+
+  selectRoastLevel(roastLevel: string) {
+    if (roastLevel === '') {
+      this.selectedRoastLevel = ''; // Reset roast level filter
+    } else {
+      this.selectedRoastLevel = roastLevel;
+    }
+    this.isRoastLevelDropdownOpen = false; // Close dropdown after selection
+    this.filterItems();  // Update the filtered items based on selection
+  }
+
+  selectWeight(weight: number | null) {
+    this.selectedWeight = weight;
+    this.isDropdownOpenWeight = false; // Close dropdown after selection
+    this.filterItems();  // Update the filtered items based on selection
+  }
 
   filterItems() {
     this.filteredItems = this.itemCards.filter(item => {
       const matchesSearch = item.title.toLowerCase().includes(this.searchText.toLowerCase());
+      const matchesWeight = this.selectedWeight !== null ? item.weight === this.selectedWeight : true;
       const matchesRoastLevel = this.selectedRoastLevel ? item.roastLevel === this.selectedRoastLevel : true;
       const matchesSpecialty = this.selectedSpecialty ? item.specialty === this.selectedSpecialty : true;
-      return matchesSearch && matchesRoastLevel && matchesSpecialty;
+      return matchesSearch && matchesWeight && matchesRoastLevel && matchesSpecialty;
     });
+
+    this.sortItems(); // Sort items after filtering
   }
 
-  onRoastLevelChange(event: any) {
-    this.selectedRoastLevel = event.target.value;
-    this.filterItems();  // Update the filtered items whenever the roast level changes
+  sortItems() {
+    if (this.selectedSort === 'Aufsteigend') {
+      this.filteredItems.sort((a, b) => a.price - b.price);
+    } else if (this.selectedSort === 'Absteigend') {
+      this.filteredItems.sort((a, b) => b.price - a.price);
+    }
+    // If `this.selectedSort` is `null`, no sorting is applied
   }
 
-  onSpecialtyChange(event: any) {
-    this.selectedSpecialty = event.target.value;
-    this.filterItems();  // Update the filtered items whenever the specialty changes
+  @HostListener('document:click', ['$event'])
+  closeDropdowns(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.relative')) {
+      this.isDropdownOpenSpecialty = false;
+      this.isRoastLevelDropdownOpen = false;
+      this.isDropdownOpenWeight = false;
+      this.isDropdownOpenSort = false;
+    }
   }
-
 }
