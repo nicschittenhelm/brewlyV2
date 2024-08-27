@@ -8,9 +8,9 @@
     </div>
     <div class="mt-auto flex items-center justify-between">
       <button class="inline-flex font-bold items-center justify-center mb-2 me-2 overflow-hidden text-sm rounded-lg bg-gradient-to-br from-orange-500 to-orange-700 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md text-white">
+        <button (click)="addToCart()" class="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md text-white">
           In den Warenkorb
-        </span>
+        </button>
       </button>
       <span class="text-3xl font-bold">{{ price }} €</span>
     </div>

@@ -249,16 +249,17 @@
 </div>
 
 
-  <div class="flex flex-wrap justify-center gap-6 mx-[5%]">
-    <app-item-card
-      *ngFor="let item of filteredItems"
-      [imagePath]="item.imagePath"
-      [title]="item.title"
-      [description]="item.description"
-      [price]="item.price"
-      [weight]="item.weight"
-      [roastLevel]="item.roastLevel"
-      [specialty]="item.specialty"
-    ></app-item-card>
-  </div>
+<div class="flex flex-wrap justify-center gap-6 mx-[5%]">
+  <app-item-card
+    *ngFor="let item of filteredItems"
+    [imagePath]="item.imagePath"
+    [title]="item.title"
+    [description]="item.description"
+    [price]="item.price"
+    [weight]="item.weight"
+    [roastLevel]="item.roastLevel"
+    [specialty]="item.specialty"
+  ></app-item-card>
+</div>
+
 </section>

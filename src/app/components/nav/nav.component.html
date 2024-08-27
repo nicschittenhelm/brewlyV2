@@ -1,5 +1,5 @@
 <nav class="h-20 w-full flex justify-between items-center px-20 backdrop-blur-lg bg-[#333333] bg-opacity-40 z-50 fixed top-0">
-    <h1 [routerLink]="['/home']" routerLinkActive="router-link-active" class="font-bold text-3xl">Brewly</h1>
+    <a [routerLink]="['/home']" routerLinkActive="router-link-active" class="font-bold text-3xl">Brewly</a>
     <span class="flex space-x-10">
 
         <a [routerLink]="['/home']" routerLinkActive="router-link-active" class="whitespace-nowrap relative inline-block group">
@@ -20,13 +20,9 @@
 
         
     </span>
-    <div class="flex w-min">
-        <a routerLink="/login" routerLinkActive="active">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-        </a>
-            
-        <a routerLink="/cart" routerLinkActive="active">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
-        </a>
-    </div>
+
+    <a routerLink="/checkout" routerLinkActive="active">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+    </a>
+
 </nav>
