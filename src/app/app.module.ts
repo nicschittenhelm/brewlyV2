@@ -9,6 +9,7 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
 import { CommonModule } from '@angular/common';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
     ShopComponent,
     ItemCardComponent,
     ShoppingCartComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
