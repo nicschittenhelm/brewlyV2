@@ -1,0 +1,9 @@
+<div
+  class="absolute right-0 mt-2 w-64 h-40 bg-white border border-gray-300 shadow-lg rounded-lg z-10"
+  *ngIf="showDropdown"
+  (mouseover)="showDropdown = true"
+  (mouseleave)="showDropdown = false"
+>
+  <!-- Content of the dropdown -->
+  <p class="text-center p-4">Your cart is empty</p>
+</div>
