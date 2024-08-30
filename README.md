@@ -1,5 +1,7 @@
 # BrewlyV1 - Deployment Instructions
 
+[Live Demo](https://nicschittenhelm.github.io/brewlyV1/)
+
 ## Overview
 
 This document provides instructions for deploying the BrewlyV1 Angular application to GitHub Pages.
