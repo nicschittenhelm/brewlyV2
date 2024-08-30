@@ -12,7 +12,7 @@
             <input
             type="text"
             placeholder="Newsletter"
-            class="flex-grow px-4 py-2 mt-6 text-gray-800 bg-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            class="flex-grow px-4 py-2 mt-6 text-customDark bg-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
             
         </div>
@@ -31,7 +31,7 @@
         <div class="mb-8 md:mb-0">
           <h3 class="text-lg font-semibold mb-4">Über Uns</h3>
           <ul class="space-y-2">
-            <li><a href="/about" class="hover:underline">Über uns</a></li>
+            <li><a [routerLink]="['/about']" class="hover:underline">Über uns</a></li>
             <li><span>Kontakt</span></li>
             <li><span>Karriere</span></li>
           </ul>
