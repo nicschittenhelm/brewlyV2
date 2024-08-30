@@ -20,5 +20,8 @@ First, build your Angular project with the appropriate base URL for GitHub Pages
 
 ```bash
 ng build --base-href "https://nicschittenhelm.github.io/brewlyV1"
+```
 
+```bash
 npx angular-cli-ghpages --dir=dist/brewlyV1/browser
+```
