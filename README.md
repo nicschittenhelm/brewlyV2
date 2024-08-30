@@ -1,5 +1,7 @@
 # BrewlyV1 - Deployment Instructions
 
+[Live Demo](https://nicschittenhelm.github.io/brewlyV1/)
+
 ## Overview
 
 This document provides instructions for deploying the BrewlyV1 Angular application to GitHub Pages.
@@ -19,4 +21,10 @@ Before deploying, make sure you have the following:
 First, build your Angular project with the appropriate base URL for GitHub Pages. This ensures that your application correctly references static assets and routes when deployed.
 
 ```bash
-ng build --base-href "https://nicschittenhelm.github.io/brewlyV1"
+ng build --base-href "https://nicschittenhelm.github.io/brewlyV1/"
+```
+
+```bash
+npx angular-cli-ghpages --dir=dist/brewlyV1/browser
+```
+
