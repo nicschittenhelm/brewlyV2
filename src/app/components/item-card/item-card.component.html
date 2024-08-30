@@ -7,11 +7,15 @@
       </p>
     </div>
     <div class="mt-auto flex items-center justify-between">
-      <button class="inline-flex font-bold items-center justify-center mb-2 me-2 overflow-hidden text-sm rounded-lg bg-gradient-to-br from-orange-500 to-orange-700 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <button (click)="addToCart()" class="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md text-white">
+      <button
+        class="inline-flex font-bold items-center justify-center mb-2 me-2 overflow-hidden text-sm rounded-lg bg-gradient-to-br from-orange-500 to-orange-700 shadow-md group transition-transform duration-100 ease-out transform active:scale-90 active:shadow-inner"
+        (click)="addToCart()"
+      >
+        <span class="relative px-5 py-2.5 text-white transition-all ease-in duration-75 rounded-md">
           In den Warenkorb
-        </button>
+        </span>
       </button>
+
       <span class="text-3xl font-bold">{{ price }} €</span>
     </div>
   </div>
