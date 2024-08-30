@@ -8,13 +8,13 @@ import { OrderCommpleteComponent } from './pages/order-commplete/order-commplete
 import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, data: { title: 'Home' }  },
   { path: 'shop', component: ShopComponent },
   { path: 'checkout', component: ShoppingCartComponent },
   { path: 'login', component: LoginComponent },
   { path: 'order-complete', component: OrderCommpleteComponent },
   { path: 'about', component: AboutComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full', data: { title: 'Home' }  },
   { path: '**', redirectTo: '/home'},
 ]
 

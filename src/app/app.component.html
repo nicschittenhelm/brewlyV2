@@ -1,3 +1,11 @@
-<app-nav></app-nav>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div *ngIf="isDesktop; else mobileMessage">
+    <app-nav></app-nav>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</div>
+  
+<ng-template #mobileMessage>
+    <div class="flex items-center justify-center h-screen text-center text-xl p-10">
+        This Demo is only available on Desktop. Please visit on a Desktop to view the demo.
+    </div>
+</ng-template>
