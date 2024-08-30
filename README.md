@@ -1,5 +1,4 @@
 # BrewlyV1 - Deployment Instructions
-
 [Live Demo](https://nicschittenhelm.github.io/brewlyV1/)
 
 ## Overview
@@ -27,4 +26,3 @@ ng build --base-href "https://nicschittenhelm.github.io/brewlyV1/"
 ```bash
 npx angular-cli-ghpages --dir=dist/brewlyV1/browser
 ```
-
