@@ -14,6 +14,7 @@ import { OrderCommpleteComponent } from './pages/order-commplete/order-commplete
 import { ShoppingCartOverlayComponent } from './components/shopping-cart-overlay/shopping-cart-overlay.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ShopImageComponent } from './components/shop-image/shop-image.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ShoppingCartOverlayComponent,
     AboutComponent,
     FooterComponent,
+    ShopImageComponent,
   ],
   imports: [
     BrowserModule,

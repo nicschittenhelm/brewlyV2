@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-item-card',
   templateUrl: './item-card.component.html',
-  styleUrls: ['./item-card.component.css']
+  styleUrls: ['./item-card.component.css'],
 })
 export class ItemCardComponent {
   @Input() imagePath!: string;
@@ -15,8 +15,12 @@ export class ItemCardComponent {
   @Input() roastLevel!: string;
   @Input() specialty!: string;
 
+  addedToCart = false;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   addToCart(): void {
     const item = {
@@ -30,6 +34,13 @@ export class ItemCardComponent {
     };
     this.cartService.addItem(item);
     console.log('Added to cart:', item);
+
+    this.addedToCart = true;
+    this.cdr.detectChanges(); // Force Angular to update the view
+
+    setTimeout(() => {
+      this.addedToCart = false;
+      this.cdr.detectChanges(); // Force Angular to update the view again
+    }, 1500);
   }
 }
-

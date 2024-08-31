@@ -1,11 +1,11 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
 })
-export class ShopComponent {
+export class ShopComponent implements OnInit {
   itemCards = [
     {
       imagePath: 'assets/San Pedro Espresso.webp',
@@ -623,5 +623,15 @@ export class ShopComponent {
     this.isRoastLevelDropdownOpen = false;
     this.isDropdownOpenWeight = false;
     this.isDropdownOpenSort = false;
+  }
+
+  //simulate layout shift
+  showImage = false;
+
+  ngOnInit() {
+    // Delay adding the image component by 1000ms
+    setTimeout(() => {
+      this.showImage = true;
+    }, 1000);
   }
 }

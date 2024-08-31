@@ -1,10 +1,10 @@
-# BrewlyV1 - Deployment Instructions
+# BrewlyV2 - Deployment Instructions
 
-[Live unoptimized Demo](https://nicschittenhelm.github.io/brewlyV1/)
+[Live unoptimized Demo](https://nicschittenhelm.github.io/brewlyV2/)
 
 ## Overview
 
-This document provides instructions for deploying the BrewlyV1 Angular application to GitHub Pages.
+This document provides instructions for deploying the BrewlyV2 Angular application to GitHub Pages.
 
 ## Prerequisites
 

@@ -1,5 +1,5 @@
 <section
-  class="h-[75vh] shadow-xl pt-20 pb-10 px-[10%] justify-between flex relative pb-20"
+  class="h-min shadow-xl pt-20 px-[10%] justify-between flex relative pb-20"
 >
   <div class="flex flex-col justify-center">
     <h1 class="text-8xl font-extrabold mb-10">Neu im Sortiment</h1>
@@ -11,11 +11,8 @@
       Genuss und unvergleichliche Qualität suchen.
     </p>
   </div>
-  <img
-    class="float-end h-full mr-[10%] transform rotate-6"
-    src="assets/shop-hero.png"
-    alt="shop hero image"
-  />
+
+  <app-shop-image *ngIf="showImage"></app-shop-image>
 
   <svg
     xmlns="http://www.w3.org/2000/svg"

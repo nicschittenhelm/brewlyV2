@@ -1,21 +1,39 @@
-<div class="w-96 h-[500px] hover:cursor-pointer bg-white border border-gray-200 rounded-lg shadow-xl p-8 flex flex-col text-customDark group">
-    <img class="shadow-md rounded-md mb-6 w-auto h-64 object-cover" [src]="imagePath" alt="product image" />
-    <div class="flex-grow">
-      <h5 class="text-xl font-bold tracking-tight line-clamp-2">{{ title }} {{ weight }}g</h5>
-      <p class="text-sm line-clamp-3">
-        {{ description }}
-      </p>
-    </div>
-    <div class="mt-auto flex items-center justify-between">
-      <button
-        class="inline-flex font-bold items-center justify-center mb-2 me-2 overflow-hidden text-sm rounded-lg bg-gradient-to-br from-orange-500 to-orange-700 shadow-md group transition-transform duration-100 ease-out transform active:scale-90 active:shadow-inner"
-        (click)="addToCart()"
-      >
-        <span class="relative px-5 py-2.5 text-white transition-all ease-in duration-75 rounded-md">
-          In den Warenkorb
-        </span>
-      </button>
-
-      <span class="text-3xl font-bold">{{ price }} €</span>
-    </div>
+<div
+  class="w-96 h-min hover:cursor-pointer bg-white border border-gray-200 rounded-lg shadow-xl p-8 flex flex-col text-customDark group"
+>
+  <img
+    class="shadow-md rounded-md mb-6 w-auto h-64 object-cover"
+    [src]="imagePath"
+    alt="product image"
+  />
+  <div class="flex-grow">
+    <h5 class="text-xl font-bold tracking-tight line-clamp-2">
+      {{ title }} {{ weight }}g
+    </h5>
+    <p class="text-sm line-clamp-3">
+      {{ description }}
+    </p>
   </div>
+  <div class="mt-6 flex items-center justify-between">
+    <button
+      class="inline-flex font-bold items-center justify-center mb-2 me-2 overflow-hidden text-sm rounded-lg bg-gradient-to-br from-orange-500 to-orange-700 shadow-md group transition-transform duration-100 ease-out transform active:scale-90 active:shadow-inner"
+      (click)="addToCart()"
+    >
+      <span
+        class="relative px-5 py-2.5 text-white transition-all ease-in duration-75 rounded-md"
+      >
+        In den Warenkorb
+      </span>
+    </button>
+
+    <span class="text-3xl font-bold">{{ price }} €</span>
+  </div>
+
+  <!-- Notification banner -->
+  <div
+    *ngIf="addedToCart"
+    class="rounded-md bg-green-500 text-white text-center p-2 mt-4"
+  >
+    Zum Warenkorb hinzugefügt!
+  </div>
+</div>
