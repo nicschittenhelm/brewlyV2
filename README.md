@@ -1,5 +1,6 @@
 # BrewlyV1 - Deployment Instructions
-[Live Demo](https://nicschittenhelm.github.io/brewlyV1/)
+
+[Live unoptimized Demo](https://nicschittenhelm.github.io/brewlyV1/)
 
 ## Overview
 
