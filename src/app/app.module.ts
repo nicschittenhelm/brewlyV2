@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +18,7 @@ import { ShoppingCartOverlayComponent } from './components/shopping-cart-overlay
 import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ShopImageComponent } from './components/shop-image/shop-image.component';
+import { DelayedLoadingService } from './services/delayed-loading.service';
 
 @NgModule({
   declarations: [
@@ -31,15 +35,14 @@ import { ShopImageComponent } from './components/shop-image/shop-image.component
     FooterComponent,
     ShopImageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  providers: [provideClientHydration()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(delayedLoadingService: DelayedLoadingService) {
+    delayedLoadingService.simulateDelay('data', 3000).subscribe(() => {
+      // Simulated delay for module loading
+    });
+  }
+}

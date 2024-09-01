@@ -310,9 +310,9 @@
 
   <div class="flex flex-wrap justify-center gap-6 mx-[5%]">
     <!-- Display items if there are any -->
-    <ng-container *ngIf="filteredItems.length; else noItemsFound">
+    <ng-container *ngIf="delayedItems.length; else noItemsFound">
       <app-item-card
-        *ngFor="let item of filteredItems"
+        *ngFor="let item of delayedItems"
         [imagePath]="item.imagePath"
         [title]="item.title"
         [description]="item.description"

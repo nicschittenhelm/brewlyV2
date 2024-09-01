@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { concatMap, delay, of, toArray } from 'rxjs';
 
 @Component({
   selector: 'app-shop',
@@ -523,6 +524,30 @@ export class ShopComponent implements OnInit {
   weights: number[] = [250, 300, 400, 500, 600, 750];
 
   filteredItems = [...this.itemCards];
+  delayedItems: any[] = [];
+
+  showImage = false;
+
+  ngOnInit() {
+    // Delay adding the image component by 2000ms
+    setTimeout(() => {
+      this.showImage = true;
+    }, 2500);
+
+    this.delayedRender(this.filteredItems);
+  }
+
+  delayedRender(items: any[]) {
+    this.delayedItems = []; // Clear the array before starting
+
+    of(...items)
+      .pipe(
+        concatMap((item, index) => of(item).pipe(delay(index * 15))) // 200ms delay between items
+      )
+      .subscribe((item) => {
+        this.delayedItems.push(item);
+      });
+  }
 
   toggleDropdownSpecialty() {
     this.closeAllDropdowns();
@@ -551,6 +576,7 @@ export class ShopComponent implements OnInit {
     this.selectedRoastLevel = '';
     this.selectedSort = null; // Reset sorting
     this.filteredItems = [...this.itemCards]; // Reset filtered items to include all items
+    this.delayedRender(this.filteredItems); // Reset delayed rendering
   }
 
   selectSort(sort: 'Aufsteigend' | 'Absteigend' | null) {
@@ -560,21 +586,13 @@ export class ShopComponent implements OnInit {
   }
 
   selectSpecialty(specialty: string) {
-    if (specialty === '') {
-      this.selectedSpecialty = ''; // Reset specialty filter
-    } else {
-      this.selectedSpecialty = specialty;
-    }
+    this.selectedSpecialty = specialty || ''; // Reset specialty filter if empty
     this.isDropdownOpenSpecialty = false; // Close dropdown after selection
     this.filterItems(); // Update the filtered items based on selection
   }
 
   selectRoastLevel(roastLevel: string) {
-    if (roastLevel === '') {
-      this.selectedRoastLevel = ''; // Reset roast level filter
-    } else {
-      this.selectedRoastLevel = roastLevel;
-    }
+    this.selectedRoastLevel = roastLevel || ''; // Reset roast level filter if empty
     this.isRoastLevelDropdownOpen = false; // Close dropdown after selection
     this.filterItems(); // Update the filtered items based on selection
   }
@@ -606,6 +624,7 @@ export class ShopComponent implements OnInit {
     });
 
     this.sortItems(); // Sort items after filtering
+    this.delayedRender(this.filteredItems); // Apply delayed rendering after filtering
   }
 
   sortItems() {
@@ -623,15 +642,5 @@ export class ShopComponent implements OnInit {
     this.isRoastLevelDropdownOpen = false;
     this.isDropdownOpenWeight = false;
     this.isDropdownOpenSort = false;
-  }
-
-  //simulate layout shift
-  showImage = false;
-
-  ngOnInit() {
-    // Delay adding the image component by 1000ms
-    setTimeout(() => {
-      this.showImage = true;
-    }, 1000);
   }
 }
