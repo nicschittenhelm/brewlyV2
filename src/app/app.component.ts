@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,22 @@ export class AppComponent implements OnInit {
   title = 'Brewly';
 
   isDesktop: boolean = true;
+  disableInteraction = true;
+
+  constructor(private router: Router) {
+    // Listen to router events
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        // Start of navigation: disable interaction
+        this.disableInteraction = true;
+      } else if (event instanceof NavigationEnd) {
+        // End of navigation: re-enable interaction after a slight delay (to account for any asynchronous loading)
+        setTimeout(() => {
+          this.disableInteraction = false;
+        }, 2000); // Adjust delay as needed
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.checkDevice();

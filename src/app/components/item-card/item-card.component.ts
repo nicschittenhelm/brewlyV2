@@ -43,4 +43,13 @@ export class ItemCardComponent {
       this.cdr.detectChanges(); // Force Angular to update the view again
     }, 1500);
   }
+
+  showImage = false;
+
+  ngOnInit() {
+    // Delay adding the image component by 2000ms
+    setTimeout(() => {
+      this.showImage = true;
+    }, 1000);
+  }
 }

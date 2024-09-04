@@ -19,6 +19,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ShopImageComponent } from './components/shop-image/shop-image.component';
 import { DelayedLoadingService } from './services/delayed-loading.service';
+import { ItemCardImageComponent } from './components/item-card-image/item-card-image.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DelayedLoadingService } from './services/delayed-loading.service';
     AboutComponent,
     FooterComponent,
     ShopImageComponent,
+    ItemCardImageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideClientHydration()],
