@@ -7,6 +7,15 @@ import { concatMap, delay, of, toArray } from 'rxjs';
   styleUrl: './shop.component.css',
 })
 export class ShopComponent implements OnInit {
+  constructor() {
+    // Simulate a heavy computation that blocks the UI for 3 seconds
+    const now = Date.now();
+    while (Date.now() - now < 2000) {
+      // Intentional delay to simulate a bad performance
+    }
+    console.log('Heavy computation finished.');
+  }
+
   itemCards = [
     {
       imagePath: 'assets/San Pedro Espresso.webp',
